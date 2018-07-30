@@ -24,7 +24,7 @@ RSpec.describe SongsController do
   describe "POST create" do
     it "creates new author and sets it to song" do
       post :create, song: {artist_name: "New Artist Test", title: "New Song Test"}
-      expect(Song.artist.name).to eq "New Artist Test"
+      expect(Song.last.artist.name).to eq "New Artist Test"
     end
     it "accepts and sets artist_id" do
       post :create, song: {artist_id: @artist.id, title: "This is a test song!"}
