@@ -33,7 +33,6 @@ class SongsController < ApplicationController
   end
 
   def create
-    raise params
     @song = Song.new(song_params)
 
     if @song.save
