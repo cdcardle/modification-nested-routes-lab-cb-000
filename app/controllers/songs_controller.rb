@@ -33,7 +33,6 @@ class SongsController < ApplicationController
   end
 
   def create
-    Artist.find_or_create_by(name: params[:artist_name])
     @song = Song.new(song_params)
     raise pry
     if @song.save
